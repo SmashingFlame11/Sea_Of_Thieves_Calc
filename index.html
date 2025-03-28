@@ -3,37 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Loot Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="calculator">
-        <input type="text" id="display" class="display" disabled>
+        <h1>Loot Calculator</h1>
 
-        <div class="buttons">
-            <button class="button" onclick="appendToDisplay('1')">1</button>
-            <button class="button" onclick="appendToDisplay('2')">2</button>
-            <button class="button" onclick="appendToDisplay('3')">3</button>
-            <button class="button" onclick="appendToDisplay('+')">+</button>
+        <!-- Faction Selection -->
+        <div class="faction-selection">
+            <label for="faction">Select Faction:</label>
+            <select id="faction" onchange="updateLootFields()">
+                <option value="gold_hoarder">Gold Hoarder</option>
+                <option value="reaper">Reaper</option>
+                <option value="other_faction">Other Faction</option>
+            </select>
+        </div>
 
-            <button class="button" onclick="appendToDisplay('4')">4</button>
-            <button class="button" onclick="appendToDisplay('5')">5</button>
-            <button class="button" onclick="appendToDisplay('6')">6</button>
-            <button class="button" onclick="appendToDisplay('-')">-</button>
+        <!-- Loot Input Fields (initially hidden) -->
+        <div class="loot-fields" id="lootFields">
+            <div class="loot-field">
+                <label for="castaway">Castaway Chest:</label>
+                <input type="number" id="castaway" value="0" min="0">
+            </div>
+            <div class="loot-field">
+                <label for="gold_hoarder">Gold Hoarder Chest:</label>
+                <input type="number" id="gold_hoarder" value="0" min="0">
+            </div>
+            <div class="loot-field">
+                <label for="reaper">Reaper Chest:</label>
+                <input type="number" id="reaper" value="0" min="0">
+            </div>
+        </div>
 
-            <button class="button" onclick="appendToDisplay('7')">7</button>
-            <button class="button" onclick="appendToDisplay('8')">8</button>
-            <button class="button" onclick="appendToDisplay('9')">9</button>
-            <button class="button" onclick="appendToDisplay('*')">*</button>
+        <!-- Calculation Button -->
+        <div>
+            <button onclick="calculateLoot()">Calculate Loot</button>
+        </div>
 
-            <button class="button" onclick="appendToDisplay('0')">0</button>
-            <button class="button" onclick="clearDisplay()">C</button>
-            <button class="button" onclick="calculateResult()">=</button>
-            <button class="button" onclick="appendToDisplay('/')">/</button>
+        <!-- Result Display -->
+        <div id="result" class="result">
+            <p>Total Loot Value: $<span id="lootValue">0</span></p>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
