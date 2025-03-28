@@ -1,48 +1,60 @@
-// scripts.js
-document.getElementById('lootForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    // Get the values from the form
-    let loot1 = parseInt(document.getElementById('loot1').value) || 0;
-    let loot2 = parseInt(document.getElementById('loot2').value) || 0;
-    let loot3 = parseInt(document.getElementById('loot3').value) || 0;
-    let loot4 = parseInt(document.getElementById('loot4').value) || 0;
-
-    // Calculate total loot for each faction
-    let totalLootFaction1 = loot1 + loot2;
-    let totalLootFaction2 = loot3 + loot4;
-
-    // Calculate overall total
-    let totalLoot = totalLootFaction1 + totalLootFaction2;
-
-    // Display the result
-    let resultText = `
-        <h3>Total Loot:</h3>
-        <p>Gold Hoarders Loot: ${totalLootFaction1}</p>
-        <p>Merchant Alliance Loot: ${totalLootFaction2}</p>
-        <p>Overall Total Loot: ${totalLoot}</p>
-    `;
-    document.getElementById('result').innerHTML = resultText;
-});
-
-function scrollToSection(sectionId) {
-    // Show the specific section based on the faction
-    const allFactions = document.querySelectorAll('.faction');
-    allFactions.forEach(faction => faction.style.display = 'none'); // Hide all factions
-    document.getElementById(sectionId).style.display = 'block'; // Show the selected faction
-
-    // Scroll to the section
-    document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
 }
 
-function backToMain() {
-    // Hide all faction sections
-    const allFactions = document.querySelectorAll('.faction');
-    allFactions.forEach(faction => faction.style.display = 'none');
-    
-    // Optionally, you can reset the form when going back to the main
-    document.getElementById('lootForm').reset();
-    
-    // Show the main form again (optional)
-    window.scrollTo(0, 0);
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.nav-buttons {
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.faction {
+    margin-bottom: 20px;
+    display: none; /* Hide the factions by default */
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
 }
