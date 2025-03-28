@@ -9,25 +9,35 @@
 <body>
     <div class="container">
         <h1>Sea of Thieves Boat Loot Calculator</h1>
+        
+        <!-- Navigation buttons -->
+        <div class="nav-buttons">
+            <button onclick="scrollToSection('faction1')">Go to Gold Hoarders Loot</button>
+            <button onclick="scrollToSection('faction2')">Go to Merchant Alliance Loot</button>
+        </div>
+
+        <!-- Main Form -->
         <form id="lootForm">
             <div class="faction" id="faction1">
-                <h2>Faction 1 (e.g., Merchant Alliance)</h2>
+                <h2>Gold Hoarders</h2>
                 <label for="loot1">Loot 1:</label>
                 <input type="number" id="loot1" name="loot1" value="0" min="0">
                 <br>
                 <label for="loot2">Loot 2:</label>
                 <input type="number" id="loot2" name="loot2" value="0" min="0">
                 <br>
+                <button type="button" onclick="backToMain()">Back to Main</button>
             </div>
 
             <div class="faction" id="faction2">
-                <h2>Faction 2 (e.g., Gold Hoarders)</h2>
+                <h2>Merchant Alliance</h2>
                 <label for="loot3">Loot 3:</label>
                 <input type="number" id="loot3" name="loot3" value="0" min="0">
                 <br>
                 <label for="loot4">Loot 4:</label>
                 <input type="number" id="loot4" name="loot4" value="0" min="0">
                 <br>
+                <button type="button" onclick="backToMain()">Back to Main</button>
             </div>
 
             <button type="submit">Calculate Total Loot</button>
