@@ -3,50 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loot Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <title>SOT Boat Loot Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="calculator">
-        <h1>Loot Calculator</h1>
-
-        <!-- Faction Selection -->
-        <div class="faction-selection">
-            <label for="faction">Select Faction:</label>
-            <select id="faction" onchange="updateLootFields()">
-                <option value="gold_hoarder">Gold Hoarder</option>
-                <option value="reaper">Reaper</option>
-                <option value="other_faction">Other Faction</option>
-            </select>
-        </div>
-
-        <!-- Loot Input Fields (initially hidden) -->
-        <div class="loot-fields" id="lootFields">
-            <div class="loot-field">
-                <label for="castaway">Castaway Chest:</label>
-                <input type="number" id="castaway" value="0" min="0">
+    <div class="container">
+        <h1>Sea of Thieves Boat Loot Calculator</h1>
+        <form id="lootForm">
+            <div class="faction" id="faction1">
+                <h2>Faction 1 (e.g., Merchant Alliance)</h2>
+                <label for="loot1">Loot 1:</label>
+                <input type="number" id="loot1" name="loot1" value="0" min="0">
+                <br>
+                <label for="loot2">Loot 2:</label>
+                <input type="number" id="loot2" name="loot2" value="0" min="0">
+                <br>
             </div>
-            <div class="loot-field">
-                <label for="gold_hoarder">Gold Hoarder Chest:</label>
-                <input type="number" id="gold_hoarder" value="0" min="0">
-            </div>
-            <div class="loot-field">
-                <label for="reaper">Reaper Chest:</label>
-                <input type="number" id="reaper" value="0" min="0">
-            </div>
-        </div>
 
-        <!-- Calculation Button -->
-        <div>
-            <button onclick="calculateLoot()">Calculate Loot</button>
-        </div>
+            <div class="faction" id="faction2">
+                <h2>Faction 2 (e.g., Gold Hoarders)</h2>
+                <label for="loot3">Loot 3:</label>
+                <input type="number" id="loot3" name="loot3" value="0" min="0">
+                <br>
+                <label for="loot4">Loot 4:</label>
+                <input type="number" id="loot4" name="loot4" value="0" min="0">
+                <br>
+            </div>
 
-        <!-- Result Display -->
-        <div id="result" class="result">
-            <p>Total Loot Value: $<span id="lootValue">0</span></p>
-        </div>
+            <button type="submit">Calculate Total Loot</button>
+        </form>
+
+        <div id="result"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
