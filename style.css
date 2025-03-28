@@ -1,65 +1,54 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* styles.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
 }
 
-.calculator {
-    background-color: #fff;
+.container {
+    background-color: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 300px;
-    text-align: center;
 }
 
 h1 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.faction {
     margin-bottom: 20px;
-}
-
-.faction-selection {
-    margin-bottom: 20px;
-}
-
-.loot-fields {
-    margin-bottom: 20px;
-}
-
-.loot-field {
-    margin-bottom: 10px;
-}
-
-input[type="number"] {
-    padding: 5px;
-    width: 80%;
-    margin-top: 5px;
 }
 
 button {
+    width: 100%;
+    padding: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
     border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-.result {
+input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#result {
     margin-top: 20px;
     font-size: 18px;
 }
